@@ -19,7 +19,7 @@ if (!gameId) {
 
 async function loadDetail(id) {
   try {
-    const [game, screenshots] = await Promise.allSettled([
+    const [game, screenshots] = await Promise.all([
       fetchGameDetail(id),
       fetchGameScreenshots(id),
     ]);
